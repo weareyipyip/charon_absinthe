@@ -18,7 +18,7 @@ defmodule CharonAbsinthe.MixProject do
         source_url: "https://github.com/weareyipyip/charon_absinthe"
       ],
       source_url: "https://github.com/weareyipyip/charon_absinthe",
-      name: "Charon",
+      name: "CharonAbsinthe",
       docs: [
         source_ref: "main",
         extras: ["./README.md"],
