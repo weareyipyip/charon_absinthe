@@ -25,9 +25,9 @@ defmodule CharonAbsinthe.IntegrationTest do
   defp config(absinthe_config) do
     Charon.Config.from_enum(
       token_issuer: "my_test_app",
+      get_base_secret: &get_secret/0,
       session_store_module: Charon.SessionStore.DummyStore,
       optional_modules: %{
-        Charon.TokenFactory.SymmetricJwt => %{get_secret: &__MODULE__.get_secret/0},
         CharonAbsinthe => absinthe_config
       }
     )
@@ -38,7 +38,7 @@ defmodule CharonAbsinthe.IntegrationTest do
   end
 
   defmodule Unauthorized do
-    def call(conn, _), do: Charon.Internal.auth_error(conn, "boom!")
+    def call(conn, _), do: Charon.Utils.set_auth_error(conn, "boom!")
   end
 
   def handle_auth_error(resolution, reason) do

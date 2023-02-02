@@ -22,7 +22,7 @@ defmodule CharonAbsinthe.ReqRefreshAuthMiddlewareTest do
   end
 
   defmodule Unauthorized do
-    def call(conn, _), do: Charon.Internal.auth_error(conn, "boom!")
+    def call(conn, _), do: Charon.Utils.set_auth_error(conn, "boom!")
   end
 
   def handle_auth_error(resolution, reason) do
