@@ -40,7 +40,7 @@ defmodule CharonAbsinthe.MixProject do
       {:ex_doc, "~> 0.21", only: [:dev, :test], runtime: false},
       {:mix_test_watch, "~> 1.0", only: [:dev], runtime: false},
       {:absinthe_plug, "~> 1.0"},
-      {:charon, "~> 1.0-beta"}
+      {:charon, "~> 2.0"}
     ]
   end
 

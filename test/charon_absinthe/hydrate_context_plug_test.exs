@@ -4,7 +4,7 @@ defmodule CharonAbsinthe.HydrateContextPlugTest do
   alias Plug.Conn
 
   alias CharonAbsinthe.HydrateContextPlug
-  alias Charon.Internal
+  alias Charon.Utils
 
   @config %{
     optional_modules: %{
@@ -17,7 +17,7 @@ defmodule CharonAbsinthe.HydrateContextPlugTest do
     }
   }
 
-  def call(conn, _), do: Conn.assign(conn, :user_id, 1) |> Internal.auth_error("test")
+  def call(conn, _), do: Conn.assign(conn, :user_id, 1) |> Utils.set_auth_error("test")
   def handle_auth_error(resolution, _reason), do: %{resolution | state: :resolved}
 
   describe "the thing" do
