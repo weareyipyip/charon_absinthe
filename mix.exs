@@ -5,7 +5,7 @@ defmodule CharonAbsinthe.MixProject do
     [
       app: :charon_absinthe,
       version: "0.0.0+development",
-      elixir: "~> 1.12",
+      elixir: "~> 1.16",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -40,7 +40,7 @@ defmodule CharonAbsinthe.MixProject do
       {:ex_doc, "~> 0.21", only: [:dev, :test], runtime: false},
       {:mix_test_watch, "~> 1.0", only: [:dev], runtime: false},
       {:absinthe_plug, "~> 1.0"},
-      {:charon, "~> 2.0 or ~> 3.0"}
+      {:charon, "~> 4.0 or ~> 3.0 or ~> 2.0"}
     ]
   end
 
